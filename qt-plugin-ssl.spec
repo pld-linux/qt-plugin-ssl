@@ -2,7 +2,7 @@ Summary:	QT plugin for SSL communications
 Summary(pl):	Rozszerzenie QT do komunikacji po SSL
 Name:		qssl
 Version:	1.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/psi/%{name}-%{version}.tar.bz2
@@ -14,30 +14,30 @@ Requires:	qt >= 3.0.5
 Requires:	openssl
 BuildRequires:	sed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes: 	psi-qssl
-
+Obsoletes:	psi-qssl
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
 
 %description
-QT plugin for SSL communications
+QT plugin for SSL communications.
 
 %description -l pl
-Rozszerzenie QT do komunikacji po SSL
+Rozszerzenie QT do komunikacji po SSL.
 
 %package devel
-Summary:        QT plugin for SSL communications - headers
-Summary(pl):    Rozszerzenie QT do komunikacji po SSL -pliki nag³ówkowe
+Summary:	QT plugin for SSL communications - headers
+Summary(pl):	Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe
 Group:		X11/Development/Libraries
-Requires:       qt-devel >= 3.0.5
-Requires:       openssl-devel
+Requires:	%{name} = %{version}
+Requires:	qt-devel >= 3.0.5
+Requires:	openssl-devel
 
 %description devel
-QT plugin for SSL communications - headers
+QT plugin for SSL communications - headers.
 
 %description devel -l pl
-Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe
+Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe.
 
 %prep
 %setup -q
