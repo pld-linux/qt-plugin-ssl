@@ -2,7 +2,7 @@ Summary:	QT plugin for SSL communications
 Summary(pl):	Rozszerzenie QT do komunikacji po SSL
 Name:		qssl
 Version:	1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/psi/%{name}-%{version}.tar.bz2
@@ -12,6 +12,7 @@ BuildRequires:	qt-devel >= 3.0.5
 BuildRequires:	openssl-devel
 Requires:	qt >= 3.0.5
 Requires:	openssl
+BuildRequires:	sed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes: 	psi-qssl
 
@@ -50,14 +51,30 @@ export QMAKESPEC
 
 qmake qssl.pro
 %{__make}
+mkdir mt
+mv libqssl.so mt/
+
+sed -e "s/thread/single/g" qssl.pro >> ./qssl.pro.1
+mv -f qssl.pro.1 qssl.pro
+qmake qssl.pro
+%{__make}
+mkdir st
+mv libqssl.so st/
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}
+install -d $RPM_BUILD_ROOT%{_libdir}/qt
+install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/
+install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/network
+install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-st/
+install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-st/network
 install -d $RPM_BUILD_ROOT%{_includedir}
+install -d $RPM_BUILD_ROOT%{_includedir}/qt
 
-install libqssl.so $RPM_BUILD_ROOT%{_libdir}
-install qssl*.h $RPM_BUILD_ROOT%{_includedir}
+install st/libqssl.so $RPM_BUILD_ROOT%{_libdir}/qt/plugins-st/network
+install mt/libqssl.so $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/network
+install qssl*.h $RPM_BUILD_ROOT%{_includedir}/qt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,4 +86,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/*.h
+%{_includedir}/qt
