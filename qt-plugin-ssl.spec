@@ -53,7 +53,7 @@ qmake qssl.pro
 sed -e "s/\,libqssl\.so\.1/\,libqssl\.so/g" Makefile >> Makefile.1
 mv -f Makefile.1 Makefile
 
-%{__make}
+%{__make} CXX=%{__cxx} LINK=%{__cxx}
 mkdir mt
 mv libqssl.so mt/
 %{__make} clean
@@ -62,7 +62,7 @@ mv -f qssl.pro.1 qssl.pro
 qmake qssl.pro
 sed -e "s/\,libqssl\.so\.1/\,libqssl\.so/g" Makefile >> Makefile.1
 mv -f Makefile.1 Makefile
-%{__make}
+%{__make} CXX=%{__cxx} LINK=%{__cxx}
 mkdir st
 mv libqssl.so st/
 
