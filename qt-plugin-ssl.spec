@@ -14,6 +14,7 @@ Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
 URL:		http://psi.affinix.com/
 BuildRequires:	openssl-devel >= 0.9.7c
 BuildRequires:	qt-devel >= 3.0.5
+BuildRequires:  qt-static >= 3.0.5
 Requires:	qt >= 3.0.5
 %{?_with_single:Requires:	qt-st}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
