@@ -19,6 +19,7 @@ Requires:	qt >= 3.1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	psi-qssl
 
+%define		_prefix		/usr/X11R6
 %define		_includedir	%{_prefix}/include/qt
 
 %description
