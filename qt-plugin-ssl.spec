@@ -15,6 +15,9 @@ Requires:	qt >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	psi-qssl
 
+%define		_xprefix	%{_prefix}/X11R6
+%define		_xdatadir	%{_xprefix}/share
+
 %description
 QT plugin for SSL communications.
 
@@ -40,9 +43,9 @@ Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe.
 %patch0 -p2
 
 %build
-QTDIR=%{_prefix}
+QTDIR=%{_xprefix}
 export QTDIR
-QMAKESPEC=%{_datadir}/qt/mkspecs/linux-g++
+QMAKESPEC=%{_xdatadir}/qt/mkspecs/linux-g++
 export QMAKESPEC
 
 qmake qssl.pro
