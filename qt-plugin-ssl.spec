@@ -12,7 +12,7 @@ Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
 # Source0-md5:	2593eb1e979070edcd07e10442f117dc
 URL:		http://psi.affinix.com/
-BuildRequires:	openssl-devel >= 0.9.6k
+BuildRequires:	openssl-devel >= 0.9.6m
 BuildRequires:	qt-devel >= 3.1.2
 Requires:	qt >= 3.1.2
 %{?_with_single:Requires:	qt-st}
