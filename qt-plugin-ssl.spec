@@ -12,9 +12,9 @@ Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
 # Source0-md5:	2593eb1e979070edcd07e10442f117dc
 URL:		http://psi.affinix.com/
-BuildRequires:	openssl-devel >= 0.9.7
-BuildRequires:	qt-devel >= 3.0.5
-Requires:	qt >= 3.0.5
+BuildRequires:	openssl-devel >= 0.9.6j
+BuildRequires:	qt-devel >= 3.1.2
+Requires:	qt >= 3.1.2
 %{?_with_single:Requires:	qt-st}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	psi-qssl
@@ -32,8 +32,8 @@ Summary:	QT plugin for SSL communications - headers
 Summary(pl):	Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	qt-devel >= 3.0.5
-Requires:	openssl-devel >= 0.9.7
+Requires:	qt-devel >= 3.1.2
+Requires:	openssl-devel >= 0.9.6j
 
 %description devel
 QT plugin for SSL communications - headers.
@@ -99,9 +99,7 @@ mv -f Makefile.tmp Makefile
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d \
-	$RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/network \
+install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/network \
 	%{?_with_single:$RPM_BUILD_ROOT%{_libdir}/qt/plugins-st/network} \
 	$RPM_BUILD_ROOT%{_includedir}
 
