@@ -2,8 +2,8 @@
 # Conditional build:
 %bcond_with	single	# build also single threaded library (deprecated)
 #
-Summary:	QT plugin for SSL communications
-Summary(pl):	Rozszerzenie QT do komunikacji po SSL
+Summary:	Qt plugin for SSL communications
+Summary(pl):	Rozszerzenie Qt do komunikacji po SSL
 Name:		qt-plugin-ssl
 Version:	2.0
 Release:	3
@@ -23,24 +23,24 @@ Obsoletes:	psi-qssl
 %define		_includedir	%{_prefix}/include/qt
 
 %description
-QT plugin for SSL communications.
+Qt plugin for SSL communications.
 
 %description -l pl
-Rozszerzenie QT do komunikacji po SSL.
+Rozszerzenie Qt do komunikacji po SSL.
 
 %package devel
-Summary:	QT plugin for SSL communications - headers
-Summary(pl):	Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe
+Summary:	Qt plugin for SSL communications - headers
+Summary(pl):	Rozszerzenie Qt do komunikacji po SSL - pliki nag³ówkowe
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	qt-devel >= 3.0.5
 Requires:	openssl-devel >= 0.9.7c
 
 %description devel
-QT plugin for SSL communications - headers.
+Qt plugin for SSL communications - headers.
 
 %description devel -l pl
-Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe.
+Rozszerzenie Qt do komunikacji po SSL - pliki nag³ówkowe.
 
 %prep
 %setup -q -n qssl-%{version}
