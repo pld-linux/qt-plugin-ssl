@@ -10,8 +10,8 @@ Version:	2.0
 Release:	1.1
 License:	GPL
 Group:		X11/Libraries
-# Source0-md5:	2593eb1e979070edcd07e10442f117dc
 Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
+# Source0-md5:	2593eb1e979070edcd07e10442f117dc
 #Patch0:		%{name}-include.patch
 URL:		http://psi.affinix.com/
 BuildRequires:	openssl-devel >= 0.9.7
