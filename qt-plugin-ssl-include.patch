@@ -1,0 +1,9 @@
+diff -ru psi-0.8.6/qssl-1.0/qssl.pro psi-0.8.6-AlchemyX/qssl-1.0/qssl.pro
+--- psi-0.8.6/qssl-1.0/qssl.pro	Tue Jul  9 10:40:14 2002
++++ psi-0.8.6-AlchemyX/qssl-1.0/qssl.pro	Sat Nov 16 02:25:12 2002
+@@ -9,4 +9,4 @@
+ 
+ # link with OpenSSL
+ LIBS += -lssl
+-
++INCLUDEPATH  += /usr/X11R6/include /usr/X11R6/include/qt
