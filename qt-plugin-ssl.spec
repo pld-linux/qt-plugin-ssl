@@ -5,7 +5,7 @@ Version:	1.0
 Release:	1
 License:	GPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/psi/qssl-%{version}.tar.bz2
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/psi/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-include.patch
 URL:		http://psi.affinix.com
 BuildRequires:	qt-devel >= 3.0.5
