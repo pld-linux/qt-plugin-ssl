@@ -5,16 +5,14 @@ Version:	1.0
 Release:	4
 License:	GPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/psi/qssl-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
 Patch0:		%{name}-include.patch
 URL:		http://psi.affinix.com/
-BuildRequires:	qt-devel >= 3.0.5
 BuildRequires:	openssl-devel >= 0.9.7
-BuildRequires:	sed
+BuildRequires:	qt-devel >= 3.0.5
 Requires:	qt >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	psi-qssl
-
 
 %description
 QT plugin for SSL communications.
