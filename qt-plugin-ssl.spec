@@ -2,7 +2,7 @@ Summary:	QT plugin for SSL communications
 Summary(pl):	Rozszerzenie QT do komunikacji po SSL
 Name:		qt-plugin-ssl
 Version:	1.0
-Release:	5
+Release:	4
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/psi/qssl-%{version}.tar.bz2
@@ -14,7 +14,6 @@ BuildRequires:	sed
 Requires:	qt >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	psi-qssl
-%define		_prefix /usr/X11R6
 
 %description
 QT plugin for SSL communications.
