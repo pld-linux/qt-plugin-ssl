@@ -12,7 +12,7 @@ Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
 # Source0-md5:	2593eb1e979070edcd07e10442f117dc
 URL:		http://psi.affinix.com/
-BuildRequires:	openssl-devel >= 0.9.7
+BuildRequires:	openssl-devel >= 0.9.7c
 BuildRequires:	qt-devel >= 3.0.5
 Requires:	qt >= 3.0.5
 %{?_with_single:Requires:	qt-st}
@@ -33,7 +33,7 @@ Summary(pl):	Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	qt-devel >= 3.0.5
-Requires:	openssl-devel >= 0.9.7
+Requires:	openssl-devel >= 0.9.7c
 
 %description devel
 QT plugin for SSL communications - headers.
