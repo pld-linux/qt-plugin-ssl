@@ -39,7 +39,7 @@ QT plugin for SSL communications - headers
 Rozszerzenie QT do komunikacji po SSL - pliki nag³ówkowe
 
 %prep
-%setup -q -n qssl-%{version}
+%setup -q
 %patch0 -p2
 
 %build
@@ -69,4 +69,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/
+%{_includedir}/*.h
