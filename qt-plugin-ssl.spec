@@ -2,7 +2,7 @@ Summary:	QT plugin for SSL communications
 Summary(pl):	Rozszerzenie QT do komunikacji po SSL
 Name:		qssl
 Version:	1.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/psi/%{name}-%{version}.tar.bz2
@@ -50,13 +50,18 @@ QMAKESPEC=%{_datadir}/qt/mkspecs/linux-g++
 export QMAKESPEC
 
 qmake qssl.pro
+sed -e "s/\,libqssl\.so\.1/\,libqssl\.so/g" Makefile >> Makefile.1
+mv -f Makefile.1 Makefile
+
 %{__make}
 mkdir mt
 mv libqssl.so mt/
-
+%{__make} clean
 sed -e "s/thread/single/g" qssl.pro >> ./qssl.pro.1
 mv -f qssl.pro.1 qssl.pro
 qmake qssl.pro
+sed -e "s/\,libqssl\.so\.1/\,libqssl\.so/g" Makefile >> Makefile.1
+mv -f Makefile.1 Makefile
 %{__make}
 mkdir st
 mv libqssl.so st/
