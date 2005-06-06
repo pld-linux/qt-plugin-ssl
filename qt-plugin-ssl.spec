@@ -13,6 +13,7 @@ Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
 # Source0-md5:	2593eb1e979070edcd07e10442f117dc
 URL:		http://psi.affinix.com/
 BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	qmake
 BuildRequires:	qt-devel >= 3.0.5
 %{?with_single:BuildRequires:	qt-st-devel >= 3.0.5}
 Requires:	qt >= 3.0.5
