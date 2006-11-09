@@ -18,8 +18,8 @@ BuildRequires:	qt-devel >= 3.0.5
 %{?with_single:BuildRequires:	qt-st-devel >= 3.0.5}
 Requires:	qt >= 3.0.5
 %{?with_single:Requires:	qt-st >= 3.0.5}
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	psi-qssl
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_includedir	%{_prefix}/include/qt
 
@@ -33,9 +33,9 @@ Rozszerzenie Qt do komunikacji po SSL.
 Summary:	Qt plugin for SSL communications - headers
 Summary(pl):	Rozszerzenie Qt do komunikacji po SSL - pliki nag³ówkowe
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
-Requires:	qt-devel >= 3.0.5
+Requires:	%{name} = %{version}-%{release}
 Requires:	openssl-devel >= 0.9.7c
+Requires:	qt-devel >= 3.0.5
 
 %description devel
 Qt plugin for SSL communications - headers.
