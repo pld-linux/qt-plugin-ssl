@@ -1,0 +1,4 @@
+- Rel 3
+- Removed versionning
+- Everything that uses qssl now will requires -R$(QTDIR)/lib/qt/plugins-mt/network
+  (chrpath is good when used well)
