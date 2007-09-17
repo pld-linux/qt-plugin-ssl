@@ -1,0 +1,11 @@
+--- qssl-2.0/qssl.cpp~	2003-06-01 00:37:38.000000000 +0200
++++ qssl-2.0/qssl.cpp	2007-09-17 16:09:57.000000000 +0200
+@@ -465,7 +465,7 @@
+ 	QByteArray enc(cs.length());
+ 	memcpy(enc.data(), cs.data(), enc.size());
+ 	QByteArray dat = base64decode(enc);
+-	unsigned char *p = (unsigned char *)dat.data();
++	const unsigned char *p = (const unsigned char *)dat.data();
+ 	X509 *x = d2i_X509(NULL, &p, dat.size());
+ 	if(!x)
+ 		return false;
