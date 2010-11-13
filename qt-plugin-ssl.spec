@@ -6,7 +6,7 @@ Summary:	Qt plugin for SSL communications
 Summary(pl.UTF-8):	Rozszerzenie Qt do komunikacji po SSL
 Name:		qt-plugin-ssl
 Version:	2.0
-Release:	7
+Release:	8
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/psi/qssl-%{version}.tar.bz2
