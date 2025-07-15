@@ -46,7 +46,7 @@ Rozszerzenie Qt do komunikacji po SSL - pliki nagłówkowe.
 
 %prep
 %setup -q -n qssl-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 export QTDIR=%{_prefix}
